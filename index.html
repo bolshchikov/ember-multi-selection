@@ -15,7 +15,7 @@
   </script>
 
   <script type="text/x-handlebars" id="components/multi-selection">
-    {{#view view.SelectionContainer}}
+    {{#view view.SelectionContainer controller=this}}
       <div class="selection-container-body">
         {{view.valuesRepresentation}}
       </div>
@@ -27,13 +27,13 @@
       </div>
 
       <div class="values-counter">
-        {{#if view.showCounter}}
-        ({{values.length}})
+        {{#if showCounter}}
+          ({{values.length}})
         {{/if}}
       </div>
 
     {{/view}}
-    {{view this.DropdownMenu}}
+    {{view this.DropdownMenu controller=this}}
   </script>
   
   <script type="text/x-handlebars" id="dropdown-item">

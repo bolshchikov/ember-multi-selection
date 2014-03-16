@@ -12,20 +12,29 @@
   App.MultiSelectionComponent = Ember.Component.extend({
     classNames: ['multi-selection-container'],
 
+    showCounter: function () {
+      return this.get('values.length') > 1;
+    }.property('values.length'),
+
+    isOpened: false,
+
     SelectionContainer: Ember.View.extend({
       classNames: ['selection-container'],
       valuesRepresentation: function () {
-        return this.get('parentView.values').join(', ');
-      }.property('parentView.values.@each'),
-      showCounter: function () {
-        return this.get('parentView.values.length') > 1;
-      }.property('parentView.values.length')
+        return this.get('controller.values').join(', ');
+      }.property('controller.values.@each'),
+      click: function () {
+        this.toggleProperty('controller.isOpened');
+      }
     }),
     DropdownMenu: Ember.CollectionView.extend({
       tagName: 'ul',
       classNames: ['dropdown-menu'],
-      contentBinding: 'parentView.content',
-      valuesBinding: 'parentView.values',
+      contentBinding: 'controller.content',
+      valuesBinding: 'controller.values',
+      isVisible: function () {
+        return this.get('controller.isOpened');
+      }.property('controller.isOpened'),
       itemViewClass: Ember.View.extend({
         templateName: 'dropdown-item',
         isSelected: function () {
