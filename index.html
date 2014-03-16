@@ -19,11 +19,19 @@
       <div class="selection-container-body">
         {{view.valuesRepresentation}}
       </div>
+
       <div class="dropdown-icon">
         <a class="dropdown-arrow" href="#">
           <img src="img/arrow.png" alt="down"/>
         </a>
       </div>
+
+      <div class="values-counter">
+        {{#if view.showCounter}}
+        ({{values.length}})
+        {{/if}}
+      </div>
+
     {{/view}}
     {{view this.DropdownMenu}}
   </script>

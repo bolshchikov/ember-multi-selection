@@ -11,11 +11,15 @@
 
   App.MultiSelectionComponent = Ember.Component.extend({
     classNames: ['multi-selection-container'],
+
     SelectionContainer: Ember.View.extend({
       classNames: ['selection-container'],
       valuesRepresentation: function () {
         return this.get('parentView.values').join(', ');
-      }.property('parentView.values.@each')
+      }.property('parentView.values.@each'),
+      showCounter: function () {
+        return this.get('parentView.values.length') > 1;
+      }.property('parentView.values.length')
     }),
     DropdownMenu: Ember.CollectionView.extend({
       tagName: 'ul',
