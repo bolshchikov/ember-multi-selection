@@ -10,13 +10,15 @@
   <script type="text/x-handlebars" id="application">
     {{multi-selection
       content=App.cities
-      value=App.selected
+      values=App.selected
     }}
   </script>
 
   <script type="text/x-handlebars" id="components/multi-selection">
-    {{#view this.SelectionContainer}}
-      <div class="selection-container-body"></div>
+    {{#view view.SelectionContainer}}
+      <div class="selection-container-body">
+        {{view.valuesRepresentation}}
+      </div>
       <div class="dropdown-icon">
         <a class="dropdown-arrow" href="#">
           <img src="img/arrow.png" alt="down"/>
@@ -24,6 +26,11 @@
       </div>
     {{/view}}
     {{view this.DropdownMenu}}
+  </script>
+  
+  <script type="text/x-handlebars" id="dropdown-item">
+    {{input type="checkbox" checked=view.isSelected}}
+    {{view.content}}
   </script>
 
 <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
