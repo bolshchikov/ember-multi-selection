@@ -5,7 +5,7 @@
  */
 (function () {
   window.App = Ember.Application.create({
-    cities: ['Moscow', 'New York', 'Toronto', 'Paris', 'Berlin', 'Tel Aviv'],
+    cities: ['Moscow', 'New York', 'Toronto', 'Paris', 'Berlin', 'Tel Aviv', 'Boston', 'Hamburg', 'London', 'Haifa', 'Novosibirsk'],
     selected: ['Moscow', 'New York']
   });
 
@@ -51,6 +51,16 @@
           }
         }
       })
+    }),
+
+    Layer: Ember.View.extend({
+      classNames: ['layer'],
+      isVisible: function () {
+        return this.get('controller.isOpened');
+      }.property('controller.isOpened'),
+      click: function () {
+        this.set('controller.isOpened', false);
+      }
     })
   });
 })();
