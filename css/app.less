@@ -1,55 +1,55 @@
 .multi-selection-container {
   width: 200px;
-  .selection-container {
-    width: inherit;
-    height: 15px;
-    border: 1px solid #b4b4b4;
-    border-radius: 3px;
-    padding: 4px;
-    .selection-container-body {
-      width: calc(100% - 25px);
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-      float: left;
-    }
-    .dropdown-icon {
-      float: right;
-      margin-top: -2px;
-      border-left: 1px solid #b4b4b4;
-      width: 20px;
-      img {
-        margin-left: 7px;
-      }
-    }
-    .values-counter {
-      float: right;
-      line-height: 15px;
-      margin-right: 3px;
-      color: grey;
-      font-size: small;
+}
+.selection-container {
+  width: inherit;
+  height: 15px;
+  border: 1px solid #b4b4b4;
+  border-radius: 3px;
+  padding: 4px;
+  .selection-container-body {
+    width: calc(100% - 25px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+  }
+  .dropdown-icon {
+    float: right;
+    margin-top: -2px;
+    border-left: 1px solid #b4b4b4;
+    width: 20px;
+    img {
+      margin-left: 7px;
     }
   }
-  .dropdown-menu {
-    list-style: none;
-    padding: 0;
-    margin: 2px 0;
-    border: 1px solid #b4b4b4;
-    width: inherit;
-    border-radius: 3px;
-    z-index: 5;
-    height: 150px;
-    overflow: auto;
-    li {
-      cursor: default;
-    }
+  .values-counter {
+    float: right;
+    line-height: 15px;
+    margin-right: 3px;
+    color: grey;
+    font-size: small;
   }
-  .layer {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
+}
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 2px 0;
+  border: 1px solid #b4b4b4;
+  width: inherit;
+  border-radius: 3px;
+  z-index: 5;
+  height: 150px;
+  overflow: auto;
+  li {
+    cursor: default;
   }
+}
+.layer {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
