@@ -11,13 +11,18 @@
     {{multi-selection
       content=App.cities
       values=App.selected
+      placeholder="Choose the city"
     }}
   </script>
 
   <script type="text/x-handlebars" id="components/multi-selection">
     {{#view view.SelectionContainer controller=this}}
       <div class="selection-container-body">
-        {{view.valuesRepresentation}}
+        {{#if values}}
+          {{view.valuesRepresentation}}
+        {{else}}
+          <span class="placeholder">{{placeholder}}</span>
+        {{/if}}
       </div>
 
       <div class="dropdown-icon">
